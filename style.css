@@ -1,0 +1,151 @@
+:root {
+    --bg-color: #0a0a0a;
+    --neon-green: #39ff14;
+    --neon-red: #ff073a;
+    --neon-yellow: #fff01f;
+    --text-color: #eee;
+    --shadow-green: 0 0 10px #39ff14, 0 0 20px #39ff14;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+#game-container {
+    width: 400px;
+    text-align: center;
+    border: 4px solid var(--neon-green);
+    box-shadow: var(--shadow-green);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+header {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#total-medals {
+    color: var(--neon-yellow);
+}
+
+#main-display {
+    min-height: 300px;
+}
+
+#status-text {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--neon-green);
+    text-shadow: var(--shadow-green);
+}
+
+#visual-area {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.hand-icon {
+    font-size: 4rem;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--text-color);
+    border-radius: 50%;
+}
+
+#control-panel {
+    height: 100px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.neon-btn {
+    background: transparent;
+    color: var(--neon-green);
+    border: 2px solid var(--neon-green);
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-family: inherit;
+    box-shadow: var(--shadow-green);
+    transition: all 0.2s;
+}
+
+.neon-btn:hover {
+    background: var(--neon-green);
+    color: var(--bg-color);
+}
+
+.btn-no {
+    border-color: var(--neon-red);
+    color: var(--neon-red);
+    box-shadow: 0 0 10px var(--neon-red);
+}
+
+.btn-no:hover {
+    background: var(--neon-red);
+    color: var(--bg-color);
+}
+
+#janken-btns {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.janken-btn {
+    font-size: 2rem;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    background: #222;
+    border: 2px solid var(--text-color);
+    border-radius: 10px;
+    transition: transform 0.1s;
+}
+
+.janken-btn:active {
+    transform: scale(0.9);
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+.pulse {
+    animation: pulse-animation 0.5s infinite;
+}
+
+@keyframes pulse-animation {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.flash {
+    animation: flash-animation 0.2s;
+}
+
+@keyframes flash-animation {
+    0% { background-color: transparent; }
+    50% { background-color: white; }
+    100% { background-color: transparent; }
+}
